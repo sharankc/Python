@@ -1,0 +1,14 @@
+def vowel_count(string):
+    vowels = {'a': 0, 'A': 0, 'e': 0, 'E': 0, 'i': 0, 'I': 0, 'o': 0, 'O': 0, 'u': 0, 'U': 0}
+
+    for char in string:
+        if char in vowels.keys():
+            vowels[char] += 1
+
+    for i in vowels:
+        if (vowels[i] > 0):
+            print(f"The vowel {i} is present {vowels[i]} times in this string")
+
+
+string = input("Enter the string of your choice: ")
+vowel_count(string)
