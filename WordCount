@@ -1,0 +1,5 @@
+def count_words(string):
+    word_count = list(string.split())
+    print(f"The total number of words in the given string are: {len(word_count)}")
+
+count_words("Hi there Sharan. How are you today?")
