@@ -1,0 +1,22 @@
+def checkPrime(n):
+    if n == 1:
+        return False
+    else:
+        for num in range(2, n):
+            if n % num == 0:
+                return False
+        return True
+
+
+n = 0
+while True:
+    ans = input("Do you want a Prime number? Y/N: ")
+    if (ans == "Y" or ans == "y"): 
+        while True:
+            n += 1
+            if checkPrime(n):
+                print(f"The next prime number is: {n}")
+                break
+    else:
+        print(f"Alright then! Thanks")    
+        break
