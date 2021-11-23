@@ -1,0 +1,9 @@
+def costCalculator(w, h, c):
+    return ((w * h) / c)
+
+
+W = 500
+H = 10
+
+Cost = int(input("Enter the cost($) per square foot: "))
+print(f"The total cost of covering {W * H} square foot of tile at ${Cost} is: ${round(costCalculator(W, H, Cost), 2)}")
