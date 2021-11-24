@@ -1,0 +1,34 @@
+# Change Problem
+
+def returnedChange(cost, paid_amount):
+    quarters, dimes, pennies = 0, 0, 0
+    change = round(paid_amount - cost, 2)
+    change_str = str(change)
+    change_dollars = int(change_str[:(change_str.find("."))])
+    change_remains = int(change_str[(change_str.find(".")) + 1:])
+    while (change_remains >= 25):
+        change_remains = change_remains - 25
+        quarters += 1
+    while (change_remains >= 10):
+        change_remains = change_remains - 10
+        dimes += 1
+    while (change_remains >= 5):
+        change_remains = change_remains - 5
+        pennies += 1
+    return change_dollars, quarters, dimes, pennies, change_remains
+
+
+price = float(input("Enter the cost of the product($): "))
+amount_paid = float(input("Enter the amount paid($): "))
+d, q, di, p, c = returnedChange(price, amount_paid)
+print("The change to be returned is: ")
+if d:
+    print(f'{d} dollar(s) and')
+if q:
+    print(f'{q} quarter(s) and')
+if di:
+    print(f'{di} dime(s) and')
+if p:
+    print(f'{p} pennie(s) and')
+if c:
+    print(f'{c} cent(s)')
