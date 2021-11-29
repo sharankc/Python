@@ -1,0 +1,14 @@
+def countVowels(string):
+    dict_vowel = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0, 'A': 0, 'E': 0, 'I': 0, 'O': 0, 'U': 0}
+    for char in string:
+        if char in dict_vowel.keys():
+            dict_vowel[char] += 1
+    print(f"The total number of vowels in this line are {sum(dict_vowel.values())}")
+    print("The count of the vowels are as given below: ")
+    for key in dict_vowel.keys():
+        if dict_vowel[key] > 0:
+            print(f"{key} : {dict_vowel[key]}")
+
+
+line = input("Enter a string: ")
+countVowels(line)
