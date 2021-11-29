@@ -1,0 +1,42 @@
+def binaryToDecimal(num):
+    num_str = str(num)
+    length = len(num_str) - 1
+    n, dec = 0, 0
+    while length >= 0:
+        dec = dec + (int(num_str[length])) * (2 ** n)
+        length -= 1
+        n += 1
+    print(f"The decimal value of {num} is: {dec}")
+    
+
+def decimalToBinary(numb):
+    if numb == 0:
+        print(f"The decimal value of {num} is: 0")    
+    else:
+        bin, num, rem = "", numb, 0
+        while num != 1:
+            rem = num % 2
+            bin += str(rem)
+            num = int(num / 2)
+        bin += "1"
+        bin = bin[::-1]
+        print(f"The decimal value of {numb} is: {bin}")
+
+
+value = input("Are you entering a binary number or decimal number (b/d)?: ")
+while True:
+    if value == "b":
+        val = "binary"
+        break
+    elif value == "d":
+        val = "decimal"
+        break
+    else:
+        print("Please enter b or d!")
+number = int(input(f"Enter the {val} number: "))
+if val == "binary":
+    binaryToDecimal(number)
+else:
+    decimalToBinary(number)
+    
+    
